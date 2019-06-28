@@ -35,8 +35,8 @@
             <div class="col top-margin">
                 <!-- Logo begins here -->
                 <p class="text-center animated tada infinite">
-                    <img src="https://awlo.org/womendecide/images/AWLO%20LOGO%20small.png" alt="AWLO Logo"
-                        width="100px" class="bottom-margin">
+                    <img src="https://awlo.org/womendecide/images/AWLO%20LOGO%20small.png" alt="AWLO Logo" width="100px"
+                        class="bottom-margin">
                 </p>
                 <h1 class="text-center acme" style="font-size:300%; line-height: 30%;">AWLO <br>
                     <br>
@@ -149,6 +149,7 @@
                     <div class="col form-group">
                         <label for="sector">What sector are you in?</label>
                         <select class="custom-select" name="sector" id="sector" required>
+                            <option disabled selected value> -- select an option -- </option>
                             <option value="School">School</option>
                             <option value="Educators">Educators</option>
                             <option value="Educational Bodies">Educational Bodies</option>
@@ -168,15 +169,44 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <p class="text-center">
-                            <button type="submit" id="register" class="btn btn-danger"
-                                style="padding-left: 40px; padding-right:40px; margin-top:20px;">
-                                Submit <i class="fa fa-paper-plane"></i>
-                            </button>
-                        </p>
+                    <div class="col-md form-group">
+                        <label for="organisation">What is the name of your Organisation/School/Affiliated body?</label>
+                        <input type="text" class="form-control" id="organisation" name="organisation" required />
+                    </div>
+                    <div class="invalid-feedback">
+                        This will help us serve you better.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
                 </div>
+                <div class="row">
+                        <div class="col-md form-group">
+                            <label for="referringChannel">How did you hear about us?</label>
+                            <select class="custom-select" name="referringChannel" id="referringChannel" required>
+                                <option disabled selected value> -- select an option -- </option>
+                                <option value="Family Member">Family Member</option>
+                                <option value="A friend">A friend</option>
+                                <option value="Social Media">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Twiter">Twitter</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-center">
+                                <button type="submit" id="register" class="btn btn-danger"
+                                    style="padding-left: 40px; padding-right:40px; margin-top:20px;">
+                                    Submit <i class="fa fa-paper-plane"></i>
+                                </button>
+                            </p>
+                        </div>
+                    </div>
             </form>
         </div>
         <div class="row">
@@ -185,7 +215,8 @@
                     &copy; <span id="year"></span> African Women In Leadership Organisation</p>
                 <small class="text-center form-text bottom-margin">Designed and Developed by
                     <a href="https://anitajarikre.com" target="_blank">Anita Jarikre</a>,
-                    <a href="https://github.com/emmanuelngewe" target="_blank">Emmanuel Ngewe</a> &amp; <a href="https://stbensonimoh.com/about" target="_blank">Benson Imoh,<sub>ST</sub></a>
+                    <a href="https://github.com/emmanuelngewe" target="_blank">Emmanuel Ngewe</a> &amp; <a
+                        href="https://stbensonimoh.com/about" target="_blank">Benson Imoh,<sub>ST</sub></a>
                 </small>
             </div>
         </div>

@@ -32,31 +32,49 @@ document.addEventListener('DOMContentLoaded', e => {
     val = val.toLowerCase()
   }
 
-//   Submit the form
-const form = document.querySelector('form')
+  //   Submit the form
+  const form = document.querySelector('form')
 
-// On Form Submit
-form.addEventListener('submit', e => {
+  // On Form Submit
+  form.addEventListener('submit', e => {
     let forms = document.getElementsByClassName('needs-validation')
 
     // Check to see if form has validation errors
     let validation = Array.prototype.filter.call(forms, form => {
-        if (form.checkValidity() === false) {
-            e.preventDefault()
-            e.stopPropagation()
-        }
+      if (form.checkValidity() === false) {
+        e.preventDefault()
+        e.stopPropagation()
+      }
 
-        form.classList.add('was-validated')
+      form.classList.add('was-validated')
     })
 
     // If form doesn't have validation errors
     if (form.checkValidity() === true) {
-        e.preventDefault()
+      e.preventDefault()
 
-        // change the button color and add the loading class
-        document.querySelector('button').classList.remove('btn-danger')
-        document.querySelector('button').classList.add('btn-primary')
-        document.querySelector('button').innerHTML = 'Loading <span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>'
+      // change the button color and add the loading class
+      document.querySelector('button').classList.remove('btn-danger')
+      document.querySelector('button').classList.add('btn-primary')
+      document.querySelector('button').innerHTML =
+        'Loading <span class="spinner"><i class="fa fa-spinner fa-spin"></i></span>'
     }
-})
+
+    const formdata = new FormData(form)
+
+    // Initiate a fetch call
+    fetch('scripts/processor.php', {
+      method: 'post',
+      body: formdata
+    })
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        console.log(data)
+      })
+      .catch(error => {
+        console.log('The Request Failed', error)
+      })
+  })
 })

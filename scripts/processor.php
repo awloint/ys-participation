@@ -82,9 +82,13 @@ if ($db->userExists($email, "iys_participation")) {
 
         $newsletter->insertIntoList("2414419", $emails);
 
-        $db->getConnection()->commit();
-
+        $name = $firstName . ' ' . $lastName;
         // Send Email
+        require './emails.php';
+        // Send Email
+        $notify->viaEmail("youthsummit@awlo.org", "AWLO Youth Summit", $email, $name, $emailBody, "AWLO International Youth Summit");
+
+        $db->getConnection()->commit();
 
         echo json_encode("success");
 }

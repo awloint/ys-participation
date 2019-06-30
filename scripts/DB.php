@@ -43,9 +43,11 @@ class DB
         return $this->_conn;
     }
 
-    public function getConnection() {
+    public function getConnection()
+    {
         return $this->_conn;
     }
+
 
     /**
      * Check if User Exists in the Database

@@ -71,7 +71,28 @@ document.addEventListener('DOMContentLoaded', e => {
         return response.json()
       })
       .then(data => {
-        console.log(data)
+        // console.log(data)
+        if (data === 'user_exists') {
+          swal(
+            'Already Registered',
+            'You have already registered for the Summit.',
+            'warning'
+          )
+
+          setTimeout(() => {
+            window.location = 'https://awlo.org/youthsummit'
+          }, 3000)
+        } else if (data === 'success') {
+          swal(
+            'Registration Successful',
+            'Your registration was successful!',
+            'success'
+          )
+
+          setTimeout(() => {
+            window.location = 'https://awlo.org/youthsummit'
+          }, 3000)
+        }
       })
       .catch(error => {
         console.log('The Request Failed', error)

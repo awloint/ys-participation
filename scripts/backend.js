@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', e => {
     // Get the referrer value from the URL
     const referrer = window.location.href.slice(window.location.href.indexOf('?') + 1)
 
-    let formdata = JSON.stringify({ referrer: referrer });
+    let formdata = JSON.stringify({ referrer: referrer })
 
     // initiate a fetch call
     fetch('scripts/display.php', {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', e => {
             console.log(data)
             for (var i = 0; i < data.length; i++) {
 
-                $("#data").append("<tr><td>" + data[i].id + "</td><td>" + data[i].firstName + "</td><td>" + data[i].lastName + "</td><td>" + data[i].email + "</td><td>" + data[i].phone + "</td><td>" + data[i].city + "</td><td>" + data[i].gender + "</td><td>" + data[i].organisation + "</td><td>" + data[i].dob + "</td><td>" + data[i].sector + "</td><td>" + data[i].organisation + "</td><td>" + data[i].referringChannel + "</td><td>" + data[i].created_at + "</td><td>");
+                $("#data").append("<tr><td>" + data[i].id + "</td><td>" + data[i].firstName + "</td><td>" + data[i].middleName + "</td><td>" + data[i].lastName + "</td><td>" + data[i].email + "</td><td>" + data[i].phone + "</td><td>" + data[i].city + "</td><td>" + data[i].gender + "</td><td>" + data[i].organisation + "</td><td>" + data[i].dob + "</td><td>" + data[i].sector + "</td><td>" + data[i].organisation + "</td><td>" + data[i].referringChannel + "</td><td>" + data[i].created_at + "</td><td>")
             };
         })
         .catch(error => {
